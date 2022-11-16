@@ -1,0 +1,69 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* utilities */
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+
+/* navbar */
+.nav-link:hover{
+    color: #008080;
+}
+.write-button{
+    background-color: #b9e7e7;
+    margin-left: 5px;
+    width: 44px;
+    height: 43px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #008080;
+}
+.write-button:hover{
+    background-color: #fff;
+    border: 1px solid #008080;
+    color: #008080;
+}
+
+/* feature blog section */
+.feature-post{
+    margin-top: 30px;
+}
+.blog-details h1{
+    color: #008080;
+}
+.read-more-btn{
+    padding: 5px 10px;
+    border: 1px solid #008080;
+    color: #008080;
+    margin-top: 40px;
+}
+.read-more-btn:hover{
+    background-color: #b9e7e7;
+    border: #fff;
+    color: #008080;
+}
+.blog-img{
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background-color: #b9e7e7;
+}
+.blog-img img{
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 350px;
+    top: 20px;
+    left: -20px;
+}
