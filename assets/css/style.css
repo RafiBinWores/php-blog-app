@@ -1,7 +1,8 @@
 /* google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/* utilities */
+/*---------------------------------------
+------------------------------ utilities */
 html{
     scroll-behavior: smooth;
 }
@@ -14,7 +15,8 @@ a{
     text-decoration: none;
 }
 
-/* navbar */
+/*---------------------------------
+------------------------------ navbar */
 .nav-link:hover{
     color: #008080;
 }
@@ -35,12 +37,20 @@ a{
     color: #008080;
 }
 
-/* feature blog section */
+/*-------------------------------
+------------ feature blog section */
 .feature-post{
-    margin-top: 30px;
+    margin-top: 60px;
 }
-.blog-details h1{
+.featured-blog h1{
     color: #008080;
+}
+.featured-blog p{
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
 }
 .read-more-btn{
     padding: 5px 10px;
@@ -53,17 +63,95 @@ a{
     border: #fff;
     color: #008080;
 }
-.blog-img{
+.featured-blog-img{
     position: relative;
     width: 100%;
     height: 350px;
     background-color: #b9e7e7;
 }
-.blog-img img{
+.featured-blog-img img{
     position: absolute;
     object-fit: cover;
     width: 100%;
     height: 350px;
     top: 20px;
     left: -20px;
+}
+
+/*
+---------------------------------------
+----------------------- blogs section  */
+.blogs{
+    margin-top: 150px;
+}
+
+.blog-img{
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background-color: #b9e7e7;
+}
+.blog-img img{
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+}
+.blog a{
+    padding: 8px 12px;
+    color: #008080;
+    background-color: #b9e7e7;
+    border-radius: 10px;
+}
+.blog a:hover{
+    color: #b9e7e7;
+    background-color: #008080;
+    transition: .5s;
+}
+.blog h4{
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+.blog p{
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+.author-info{
+    display: flex;
+    gap: 16px;
+}
+.author-info img{
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/*---------------------------------
+------------- blog category section  */
+.blog-category{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.gap{
+    column-gap: 20px;
+}
+.col-4{
+    padding: 8px 0px;
+    background-color: #b9e7e7;
+    border-radius: 10px;
+    width: 280px;
+}
+
+
+/*-----------------------------------------
+-------------------------------- footer  */
+.bg-color{
+    background-color: #008080;
 }
