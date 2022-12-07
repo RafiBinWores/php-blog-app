@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="assets/img/navlogo.png" type="image/x-icon">
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/8629e48487.js" crossorigin="anonymous"></script>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+    
+    <!-- quill rich text -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="header" id="header">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="assets/image/Untitled-1.png" alt="Logo" width="90" height="50" class="d-inline-block align-text-top me-2">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse justify-content-end ms-2 navbar-collapse" id="navbarNavDropdown">
+
+          <ul class="navbar-nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link write-button me-2" href="">Write</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div> 
+    </nav>
+</header>
+
+  <div class="container mt-lg-5 mb-5" >
+
+    <h1 class="mb-4">Edit Blog</h1>
+
+    <form action="" method="post" enctype="multipart/form-data">
+      <div class="mb-4">
+        <label for="title" class="form-label">Blog Title</label>
+        <input type="text" name="title" class="form-control" id="title" placeholder="title..." required>
+      </div>
+      <div class="mb-4">
+        <label for="category" class="form-label">Blog Categories</label>
+          <select class="form-select" aria-label="Default select example" name="category" id="category" required>
+              <option selected>Choose one</option>
+              <option value="Food">Food</option>
+              <option value="Travel">Travel</option>
+              <option value="Wild">Wild</option>
+          </select>
+      </div>
+      <div>
+        <label for="editor" class="form-label">Blog Description</label>
+        <!-- <textarea name="" id="editor" cols="30" rows="10"></textarea> -->
+        <div id="editor" style="height: 50vh;">write something...</div>
+      </div>
+      <div class="form-group form-check mt-3">
+        <input type="checkbox" class="form-check-input" id="is_featured">
+        <label class="form-check-label" for="is_featured">Featured</label>
+      </div>
+
+      <div class="mb-3">
+        <label for="formFile" class="form-label mt-4">Add Thumbnail</label>
+        <input class="form-control mt-1" type="file" id="formFile" name="thumbnail" required>
+      </div>
+
+      <!-- <div class="img-wrapper rounded mx-auto">
+            
+        <img src="" alt="" id="image">
+        <i class="fa-solid fa-cloud-arrow-up text-primary pt-5" style="font-size: 3rem"></i>
+        <h6 class="text-info">No file chosen, yet!</h6>
+
+      </div>
+
+      <div class="profile-img-input">
+        <input id="default-btn" type="file" name="userImage" hidden />
+        <button
+          onclick="defaultBtnActive()"
+          id="custom-btn"
+          class="btn btn-info mt-3"
+          style="width: 12rem">
+          Choose a file
+        </button>
+      </div> -->
+
+      <button type="submit" name="submit" class="btn btn-primary mt-4">Update Post</button>
+    </form>
+  </div>
+
+      <!-------------------------------
+         footer secton 
+   -------------------------------->
+   <footer class="bg-color text-white pt-5 pb-4 mt-3">
+    <div class="container text-center text-md-start">
+      <div class="row text-center text-md-start">
+        <div class="col-md-3 col-lg-3 mx-auto mt-3">
+          <h5 class="text-upercase md-4 font-weight-bold text-white pb-2 mb-3 text-danger border-bottom border-white border-3">Homie Blog</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quasi minus maiores sunt eaque fuga, a exercitationem recusandae quidem saepe!</p>
+        </div>
+        <div class="col-md-2 col-lg-2 mx-auto mt-3">
+          <h5 class="text-upercase md-4 font-weight-bold text-white pb-2 mb-3 text-danger border-bottom border-white border-3">Blogs</h5>
+          <p>
+            <a href="" class="text-white" style="text-decoration: none">Wild Life</a>
+          </p>
+          <p>
+            <a href="" class="text-white" style="text-decoration: none">Food</a>
+          </p>
+          <p>
+            <a href="" class="text-white" style="text-decoration: none">Travel</a>
+          </p>
+          <p>
+            <a href="" class="text-white" style="text-decoration: none">Arts</a>
+          </p>
+        </div>
+        <div class="col-md-3 col-lg-2 mx-auto mt-3">
+          <h5 class="text-upercase md-4 font-weight-bold text-white pb-2 mb-3 text-danger border-bottom border-white border-3">Usefull links</h5>
+          <p>
+            <a href="" class="text-white" style="text-decoration: none">Your Account</a>
+          </p>
+          <p>
+            <a href="" class="text-white" style="text-decoration: none">Became a seller</a>
+          </p>
+          <p>
+            <a href="" class="text-white" style="text-decoration: none">Contact us</a>
+          </p>
+          <p>
+            <a href="" class="text-white" style="text-decoration: none">Helps</a>
+          </p>
+        </div>
+        <div class="col-md-4 col-lg-3 mx-auto mt-3">
+          <h5 class="text-upercase md-4 font-weight-bold text-white pb-2 mb-3 text-danger border-bottom border-white border-3">Contacct Us</h5>
+          <p>
+            <i class="fa-solid fa-house"></i> Mirpur-1, Dhaka 1216
+          </p>
+          <p>
+            <i class="fa-regular fa-envelope"></i> recycle@gmail.com
+          </p>
+          <p>
+            <i class="fa-solid fa-phone"></i></i> +880 162******
+          </p>
+        </div>
+        <hr class="mb-4">
+      </div>
+      <div class="row align-items-center">
+        <div class="col-md-7 col-lg-8">
+          <p>Copyright @2022 all rigts reserved by:
+            <a href=""  style="text-decoration: none;">
+              <strong class="text-white">Homie Blog</strong>
+            </a>
+          </p>
+        </div>
+        <div class="col-md-5 col-lg-4">
+          <div class="text-center text-md-right">
+
+            <ul class="list-unstyled list-inline">
+              <li class="list-inline-item">
+                <a href="" class="btn-floating btn-sm text-white" style="font-size: 24px;"><i class="fa-brands fa-facebook"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="" class="btn-floating btn-sm text-white" style="font-size: 24px;"><i class="fa-brands fa-square-twitter"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="" class="btn-floating btn-sm text-white" style="font-size: 24px;"><i class="fa-brands fa-square-instagram"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="" class="btn-floating btn-sm text-white" style="font-size: 24px;"><i class="fa-brands fa-square-youtube"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+   </footer>
+      
+    <!-- scripts -->
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/quill.js"></script>
+</body>
+</html>

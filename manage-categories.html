@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage categories</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+
+    <!-- remix icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+
+    <!-- css file -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container ">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+              <img src="assets/image/Untitled-1.png" alt="Logo" width="90" height="50" class="d-inline-block align-text-top me-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse justify-content-end ms-2 navbar-collapse" id="navbarNavDropdown">
+    
+              <ul class="navbar-nav justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="add-post.html">Start writing</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link write-button" href="login.html">Login</a>
+                </li>
+              </ul>
+            </div>
+          </div> 
+        </nav>
+    </header>
+
+
+    <section>
+      <div class="category-container">
+      
+        <div class="container d-flex gap-5 pt-3 flex-c">
+          <div class="account-sidebar">
+            <div class="sidebar-profile-menu">
+              <h6 class="mb-3 border-bottom border-dark">Account</h6>
+              <div class="sidebar-category-link mt-4">
+
+                <a href="add-post.html" class="d-flex ms-2 mb-3 text-color" style="font-size: 16px;">
+                  <i class="ri-pencil-line me-2" style="font-size: 18px;"></i> <p>Add Post</p> 
+                </a>
+
+                <a href="dashboard.html" class="d-flex ms-2 mb-3 text-color" style="font-size: 16px;">
+                  <i class="ri-edit-line me-2" style="font-size: 18px;"></i> <p>Manage Post</p>
+                  </a>
+
+                <a href="add-user.html" class="d-flex ms-2 mb-3 text-color" style="font-size: 16px;">
+                  <i class="ri-user-add-line me-2" style="font-size: 18px;"></i> <p>Add User</p>
+                  </a>
+
+                <a href="manage-users.html" class="d-flex ms-2 mb-3 text-color" style="font-size: 16px;">
+                  <i class="ri-user-settings-line me-2" style="font-size: 18px;"></i> <p>Manage User</p>
+                  </a>
+
+                <a href="add-category.html" class="d-flex ms-2 mb-3 text-color" style="font-size: 16px;">
+                  <i class="ri-play-list-add-fill me-2" style="font-size: 18px;"></i> <p>Add Categories</p>
+                  </a>
+
+                <a href="manage-categories.html" class="d-flex ms-2 mb-3 text-color" style="font-size: 16px;">
+                  <i class="ri-list-settings-line me-2" style="font-size: 18px;"></i> <p>Manage Categories</p>
+                  </a>
+
+                <a href="#" class="d-flex ms-2 text-color" style="font-size: 16px;">
+                  <i class="ri-logout-circle-r-line me-2" style="font-size: 18px;"></i> <p>Logout</p>
+                </a>
+
+              </div>
+            </div>
+          </div>
+      
+          <div class="container">
+            <div class="row">
+
+              <div class="col-12 mb-4">
+                <h3 class="text-color">Manage Categories</h3>
+
+                <table class="table shadow p-3 mt-5 mb-5 bg-body">
+                  <thead class="bg-color text-white shadow p-3 mb-5">
+                    <tr>
+                      <th>S.No</th>
+                      <th>Title</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="p-5">
+                      <td>1</td>
+                      <td>Food</td>
+                      <td><a href="edit-category.html" class="bg-color edit-btn px-3 py-1 rounded text-white">Edit</a></td>
+                      <td><a href="delete-category.html" class="delete-btn delete-btn px-3 py-1 rounded text-white">Delete</a></td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Food</td>
+                      <td><a href="edit-category.html" class="bg-color edit-btn px-3 py-1 rounded text-white">Edit</a></td>
+                      <td><a href="delete-category.html" class="delete-btn px-3 py-1 rounded text-white">Delete</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-------------------------------
+         footer secton 
+   -------------------------------->
+   <footer class="bg-color text-white pt-5 pb-4 mt-5">
+    <div class="container text-center text-md-start">
+      <div class="row text-center text-md-start">
+        <div class="col-md-3 col-lg-3 mx-auto mt-3">
+          <h5 class="text-upercase md-4 font-weight-bold text-white pb-2 mb-3 text-danger border-bottom border-white border-3">Homie Blog</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quasi minus maiores sunt eaque fuga, a exercitationem recusandae quidem saepe!</p>
+        </div>
+        <div class="col-md-2 col-lg-2 mx-auto mt-3">
+          <h5 class="text-upercase md-4 font-weight-bold text-white pb-2 mb-3 text-danger border-bottom border-white border-3">Blogs</h5>
+          <p>
+            <a href="" class="text-white" style="text-decoration: none">Wild Life</a>
+          </p>
+          <p>
+            <a href="" class="text-white" style="text-decoration: none">Food</a>
+          </p>
+          <p>
+            <a href="" class="text-white" style="text-decoration: none">Travel</a>
+          </p>
+          <p>
+            <a href="" class="text-white" style="text-decoration: none">Arts</a>
+          </p>
+        </div>
+        <div class="col-md-3 col-lg-2 mx-auto mt-3">
+          <h5 class="text-upercase md-4 font-weight-bold text-white pb-2 mb-3 text-danger border-bottom border-white border-3">Usefull links</h5>
+          <p>
+            <a href="" class="text-white" style="text-decoration: none">Your Account</a>
+          </p>
+          <p>
+            <a href="" class="text-white" style="text-decoration: none">Became a seller</a>
+          </p>
+          <p>
+            <a href="" class="text-white" style="text-decoration: none">Contact us</a>
+          </p>
+          <p>
+            <a href="" class="text-white" style="text-decoration: none">Helps</a>
+          </p>
+        </div>
+        <div class="col-md-4 col-lg-3 mx-auto mt-3">
+          <h5 class="text-upercase md-4 font-weight-bold text-white pb-2 mb-3 text-danger border-bottom border-white border-3">Contacct Us</h5>
+          <p>
+            <i class="fa-solid fa-house"></i> Mirpur-1, Dhaka 1216
+          </p>
+          <p>
+            <i class="fa-regular fa-envelope"></i> recycle@gmail.com
+          </p>
+          <p>
+            <i class="fa-solid fa-phone"></i></i> +880 162******
+          </p>
+        </div>
+        <hr class="mb-4">
+      </div>
+      <div class="row align-items-center">
+        <div class="col-md-7 col-lg-8">
+          <p>Copyright @2022 all rigts reserved by:
+            <a href=""  style="text-decoration: none;">
+              <strong class="text-white">Homie Blog</strong>
+            </a>
+          </p>
+        </div>
+        <div class="col-md-5 col-lg-4">
+          <div class="text-center text-md-right">
+
+            <ul class="list-unstyled list-inline">
+              <li class="list-inline-item">
+                <a href="" class="btn-floating btn-sm text-white" style="font-size: 24px;"><i class="fa-brands fa-facebook"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="" class="btn-floating btn-sm text-white" style="font-size: 24px;"><i class="fa-brands fa-square-twitter"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="" class="btn-floating btn-sm text-white" style="font-size: 24px;"><i class="fa-brands fa-square-instagram"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="" class="btn-floating btn-sm text-white" style="font-size: 24px;"><i class="fa-brands fa-square-youtube"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+   </footer>
+    
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
