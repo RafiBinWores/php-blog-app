@@ -36,20 +36,18 @@ $username = $_SESSION['register-data']['username'] ?? null;
 <body>
   <section class="body">
     <div class="form-conainer bg-white shadow p-3 bg-body rounded" style="width: 25rem;">
+      <h3 class="d-flex justify-content-center mt-4 mb-4 fw-bold">Sign Up</h3>
+
+      <?php if (isset($_SESSION['register'])) : ?>
+        <p class="text-danger">
+          <?= $_SESSION['register'];
+          unset($_SESSION['register']);
+          ?>
+        </p>
+
+      <?php endif ?>
 
       <form action="<?= ROOT_URL ?>register-logic.php" method="post" enctype="multipart/form-data">
-        <h3 class="d-flex justify-content-center mt-4 mb-4 fw-bold">Sign Up</h3>
-
-        <?php if (isset($_SESSION['register'])) : ?>
-          <div class="alert alert-danger" role="alert">
-            <p>
-              <?= $_SESSION['register'];
-              unset($_SESSION['register']);
-              ?>
-            </p>
-          </div>
-
-        <?php endif ?>
 
         <div class="mb-3">
           <input type="text" class="form-control" name="username" value="<?= $username ?>" id="username" placeholder="Username">

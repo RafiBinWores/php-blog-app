@@ -2,6 +2,17 @@
 
 require 'config/database.php';
 
+//fetch current user
+if (isset($_SESSION['user-id'])) {
+
+
+    $id = filter_var($_SESSION['user-id'], FILTER_SANITIZE_NUMBER_INT);
+
+    $sql = "SELECT avatar FROM users WHERE id = '$id'";
+    $res = mysqli_query($conn, $sql);
+    $avatar = mysqli_fetch_assoc($res);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -49,20 +60,17 @@ require 'config/database.php';
                         <li class="nav-item">
                             <a class="nav-link" href="<?= ROOT_URL ?>contact.php">Contact</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link me-2" href="<?= ROOT_URL ?>add-post.php">Start writing</a>
-                        </li>
 
                         <?php if (isset($_SESSION['user-id'])) : ?>
                             <li class="nav-item">
                                 <a class="nav-link write-button" href="<?= ROOT_URL ?>admin/index.php">
-                                    <img src="assets/image/blog1.jpg" alt="">
+                                    <img src="<?= ROOT_URL . 'assets/uploads/' . $avatar['avatar'] ?>" alt="">
                                 </a>
                             </li>
                         <?php else : ?>
 
                             <li class="nav-item">
-                                <a class="nav-link me-2" href="<?= ROOT_URL ?>login.php">Signin</a>
+                                <a class="nav-link me-2" href="<?= ROOT_URL ?>login.php">Sign in</a>
                             </li>
 
                         <?php endif ?>

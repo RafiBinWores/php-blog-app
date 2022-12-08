@@ -1,6 +1,12 @@
 <?php
 
 include('partials/header.php');
+
+$sn = 1;
+
+$sql = "SELECT * FROM categories ORDER BY title";
+$res = mysqli_query($conn, $sql);
+
 ?>
 
 
@@ -45,7 +51,7 @@ include('partials/header.php');
               </a>
             <?php endif ?>
 
-            <a href="#" class="d-flex ms-2 text-color" style="font-size: 16px;">
+            <a href="logout.php" class="d-flex ms-2 text-color" style="font-size: 16px;">
               <i class="ri-logout-circle-r-line me-2" style="font-size: 18px;"></i>
               <p>Logout</p>
             </a>
@@ -60,30 +66,35 @@ include('partials/header.php');
           <div class="col-12 mb-4">
             <h3 class="text-color">Manage Categories</h3>
 
-            <table class="table shadow p-3 mt-5 mb-5 bg-body">
-              <thead class="bg-color text-white shadow p-3 mb-5">
-                <tr>
-                  <th>S.No</th>
-                  <th>Title</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="p-5">
-                  <td>1</td>
-                  <td>Food</td>
-                  <td><a href="edit-category.php" class="bg-color edit-btn px-3 py-1 rounded text-white">Edit</a></td>
-                  <td><a href="delete-category.php" class="delete-btn delete-btn px-3 py-1 rounded text-white">Delete</a></td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Food</td>
-                  <td><a href="edit-category.php" class="bg-color edit-btn px-3 py-1 rounded text-white">Edit</a></td>
-                  <td><a href="delete-category.php" class="delete-btn px-3 py-1 rounded text-white">Delete</a></td>
-                </tr>
-              </tbody>
-            </table>
+            <?php
+            if (mysqli_num_rows($res) > 0) : ?>
+
+              <table class="table shadow p-3 mt-5 mb-5 bg-body">
+                <thead class="bg-color text-white shadow p-3 mb-5">
+                  <tr>
+                    <th>S.No</th>
+                    <th>Title</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php while ($category = mysqli_fetch_assoc($res)) : ?>
+                    <tr class="p-5">
+                      <td><?php echo $sn++ ?></td>
+                      <td><?= $category['title'] ?></td>
+                      <td><a href="<?= ROOT_URL ?>admin/edit-category.php?id=<?= $category['id'] ?>" class="bg-color edit-btn px-3 py-1 rounded text-white">Edit</a></td>
+                      <td><a href="<?= ROOT_URL ?>admin/delete-category.php?id=<?= $category['id'] ?>" class="delete-btn delete-btn px-3 py-1 rounded text-white">Delete</a></td>
+                    </tr>
+                  <?php endwhile ?>
+
+                </tbody>
+              </table>
+            <?php else : ?>
+
+              <div class="text-danger"><?= "No category found" ?></div>
+
+            <?php endif ?>
           </div>
 
         </div>

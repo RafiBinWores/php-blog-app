@@ -23,11 +23,15 @@ include('partials/header.php');
           <option value="Wild">Wild</option>
         </select>
       </div>
-      <div>
-        <label for="editor" class="form-label">Blog Description</label>
-        <!-- <textarea name="" id="editor" cols="30" rows="10"></textarea> -->
-        <div id="editor" style="height: 50vh;">write something...</div>
+      <div class="form-group mt-3">
+        <label for="description">Blog Description</label>
+        <textarea class="form-control mt-1" id="description" name="description" rows="8"></textarea>
       </div>
+      <!-- <div>
+        <label for="editor" class="form-label">Blog Description</label>
+        <textarea name="" id="editor" cols="30" rows="10"></textarea>
+        <div id="editor" style="height: 50vh;">write something...</div>
+      </div> -->
       <div class="form-group form-check mt-3">
         <input type="checkbox" class="form-check-input" id="is_featured">
         <label class="form-check-label" for="is_featured">Featured</label>

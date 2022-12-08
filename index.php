@@ -21,7 +21,7 @@ include('partials/header.php');
         </div>
         <div class="col-lg-6">
           <div class="featured-blog-img">
-            <img src="assets/image/blog3.jpg" alt="">
+            <img src="assets/image/blog1.jpg" alt="">
           </div>
         </div>
       </div>

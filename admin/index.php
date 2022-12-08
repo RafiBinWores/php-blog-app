@@ -1,6 +1,14 @@
 <?php
 
+// JOIN users ON posts.author_id = user.id 
+
 include 'partials/header.php';
+
+$sn = 1;
+$current_user = $_SESSION['user-id'];
+$sql  = "SELECT id, title category_id FROM posts WHERE author_id=$current_user ORDER BY id DESC";
+
+$res = mysqli_query($conn, $sql);
 ?>
 
 <section>
@@ -46,7 +54,7 @@ include 'partials/header.php';
 
             <?php endif ?>
 
-            <a href="#" class="d-flex ms-2 text-color" style="font-size: 16px;">
+            <a href="logout.php" class="d-flex ms-2 text-color" style="font-size: 16px;">
               <i class="ri-logout-circle-r-line me-2" style="font-size: 18px;"></i>
               <p>Logout</p>
             </a>
@@ -62,34 +70,44 @@ include 'partials/header.php';
             <h3 class="text-color">Manage Posts</h3>
 
             <div id="user-table">
-              <table class="table shadow p-3 mb-5 bg-body">
-                <thead class="bg-color text-white shadow p-3 mb-5">
-                  <tr>
-                    <th>S.No</th>
-                    <th>Title</th>
-                    <th>Category</th>
-                    <th>Delete</th>
-                    <th>Admin</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td data-title="S.No">1</td>
-                    <td data-title="Title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione, recusandae.</td>
-                    <td data-title="Category">Food</td>
-                    <td data-title="Edit"><a href="edit-post.php" class="bg-color edit-btn px-3 py-1 rounded text-white">Edit</a></td>
-                    <td data-title="Delete"><a href="delete-post.php" class="delete-btn delete-btn px-3 py-1 rounded text-white">Delete</a></td>
-                  </tr>
-                  <tr>
-                    <td data-title="S.No">2</td>
-                    <td data-title="Title">Lorem ipsum dolor sit amet consectetur adipisicing elit. At totam, illo accusamus consequuntur et earum recusandae veritatis dolorem quisquam deleniti sequi molestiae ipsum possimus.</td>
-                    <td data-title="Category">Wild</td>
-                    <td data-title="Edit"><a href="edit-post.php" class="bg-color edit-btn px-3 py-1 rounded text-white">Edit</a></td>
-                    <td data-title="Delete"><a href="delete-post.php" class="delete-btn delete-btn px-3 py-1 rounded text-white">Delete</a></td>
-                  </tr>
 
-                </tbody>
-              </table>
+              <?php if (mysqli_num_rows($res) > 0) : ?>
+
+                <table class="table shadow p-3 mb-5 bg-body">
+                  <thead class="bg-color text-white shadow p-3 mb-5">
+                    <tr>
+                      <th>S.No</th>
+                      <th>Title</th>
+                      <th>Category</th>
+                      <th>Delete</th>
+                      <th>Admin</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php while ($post = mysqli_fetch_assoc($res)) : ?>
+
+                      <?php
+                      $category_id = $_POST['category_id'];
+                      $sql1 = "SELECT title FROM categories WHERE id = $category_id";
+                      $res1 = mysqli_query($conn, $sql1);
+                      $category = mysqli_fetch_assoc($res1);
+
+                      ?>
+                      <tr>
+                        <td data-title="S.No"><?= $sn++ ?></td>
+                        <td data-title="Title"><?= $post['title'] ?></td>
+                        <td data-title="Category"><?= $category['title'] ?></td>
+                        <td data-title="Edit"><a href="edit-post.php" class="bg-color edit-btn px-3 py-1 rounded text-white">Edit</a></td>
+                        <td data-title="Delete"><a href="delete-post.php" class="delete-btn delete-btn px-3 py-1 rounded text-white">Delete</a></td>
+                      </tr>
+                    <?php endwhile ?>
+
+
+                  </tbody>
+                </table>
+              <?php else : ?>
+                <p class="text-danger"><?= "No post found" ?></p>
+              <?php endif ?>
             </div>
           </div>
 

@@ -1,23 +1,38 @@
 <?php
 
 include('partials/header.php');
+
+$title = $_SESSION['add-category-data']['title'] ?? null;
+$description = $_SESSION['add-category-data']['description'] ?? null;
+
+unset($_SESSION['add-category-data']);
+
 ?>
 
 
 <div class="container">
   <div class="category-form-area mx-auto">
     <h1 class="mt-5">Add Category</h1>
-    <form method="post" enctype="" action="" class="mt-4">
+    <?php if (isset($_SESSION['add-category'])) : ?>
+      <p class="text-danger">
+        <?= $_SESSION['add-category'];
+        unset($_SESSION['add-category']);
+        ?>
+      </p>
+    <?php endif ?>
+
+    <form method="post" enctype="" action="<?= ROOT_URL ?>admin/add-category-logic.php" class="mt-4">
       <div class="form-group mb-3">
         <label for="category-title">Category Name</label>
-        <input type="text" class="form-control mt-2" id="category-title" placeholder="Title">
+        <input type="text" name="title" value="<?= $title ?>" class="form-control mt-2" id="category-title" placeholder="Title">
       </div>
       <div class="form-group">
         <label for="category-desc">Description</label>
-        <textarea class="form-control mt-2" name="category-desc" id="category-desc" cols="30" rows="5" placeholder="write something..."></textarea>
+        <textarea class="form-control mt-2" name="description" value="<?= $description ?>" id="category-desc" cols="30" rows="5" placeholder="write something..."></textarea>
       </div>
-      <button type="submit" class="btn btn-primary mt-3">Add Category</button>
+      <button type="submit" name="submit" class="btn btn-primary mt-3">Add Category</button>
     </form>
+
   </div>
 </div>
 
